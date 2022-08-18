@@ -33,7 +33,7 @@ function App() {
     );
   }
 
-  return <Tours />;
+  return <Tours tours={tours} />;
 }
 
 export default App;
