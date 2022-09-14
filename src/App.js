@@ -8,6 +8,11 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [tours, setTours] = useState([]);
 
+  const removeTour = (id) => {
+    const newTours = tours.filter((tour) => tour.id !== id);
+    setTours(newTours);
+  };
+
   const fetchTours = async () => {
     setIsLoading(true); //making sure but not needed since the initial value is true at the hook
     try {
@@ -33,7 +38,7 @@ function App() {
     );
   }
 
-  return <Tours tours={tours} />;
+  return <Tours tours={tours} removeTour={removeTour} />;
 }
 
 export default App;
